@@ -113,7 +113,7 @@ function App() {
         </ul>
       </header>
       <section className="hero">
-        <h2>Focus, Relieve and Capture.</h2>
+        <h2>Focus, Believe and Capture.</h2>
         <a href="#" onClick={scrollToSection(photogridRef)}>
           <img src={HeroGridIcon} className="grid-icon" alt="Grid Icon" />
         </a>
