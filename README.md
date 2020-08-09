@@ -1,4 +1,4 @@
-## Simple Photography Site.
+## Simple One-Page Photography Site.
 
 Built with `React`
 

@@ -31,6 +31,10 @@ header.desktop-header {
       margin-right: 20px;
       list-style: none;
 
+      &.link {
+        font-size: 32px;
+      }
+
       &:last-child {
         margin-right: 0;
       }
@@ -57,6 +61,34 @@ a {
   background-size: 100% 0.2em;
   background-position: 0 88%;
   transition: background-size 0.25s ease-in;
+
+  &:hover {
+    // border-bottom: 2px solid #ffc73e;
+    background-image: linear-gradient(120deg, #ffc73e 0%, #ffffff 100%);
+    background-size: 100% 95%;
+    color: $black;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  background-image: linear-gradient(120deg, #ffc73e 0%, #f9c74d 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+  font-family: "Poppins", sans-serif;
+
   &:hover {
     // border-bottom: 2px solid #ffc73e;
     background-image: linear-gradient(120deg, #ffc73e 0%, #ffffff 100%);
@@ -434,6 +466,10 @@ p {
           padding: 32px 0;
           font-size: 32px;
           text-align: center;
+
+          &.link {
+            font-size: 32px;
+          }
 
           &:last-child {
             margin-right: 0;

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./App.scss";
 import logo from "../assets/logo.svg";
@@ -12,9 +13,6 @@ import menuIcon from "../assets/menu-icon.svg";
 import profileImg from "../assets/about/1.jpg";
 import albumCover from "../assets/albums/1.jpg";
 import HeroGridIcon from "../assets/hero-grid-btn.svg";
-import facebookIcon from "../assets/social/facebook.svg";
-import twitterIcon from "../assets/social/twitter.svg";
-import instagramIcon from "../assets/social/instagram.svg";
 import backIcon from "../assets/arrow-left.svg";
 
 function FadeInSection(props) {
@@ -40,6 +38,7 @@ function App() {
   const [showMenu, setShowMenu] = React.useState(false);
   const photogridRef = React.useRef();
   const albumRef = React.useRef();
+  const aboutRef = React.useRef();
 
   const toggleMenu = (show) => () => {
     window.event.preventDefault();
@@ -68,20 +67,22 @@ function App() {
         <div className="mobile-menu" style={{ width: showMenu ? "100%" : 0 }}>
           <ul className="menu-link">
             <li>
-              <a href="javascript:void(0)" onClick={toggleMenu(false)}>
+              <button onClick={toggleMenu(false)}>
                 <img src={backIcon} stroke="white" width="32px" alt="Go back" />
-              </a>
+              </button>
             </li>
             <li>
-              <a href="explore" onClick={scrollToSection(photogridRef)}>
+              <a href="#" onClick={scrollToSection(photogridRef)}>
                 Explore
               </a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="#" onClick={scrollToSection(aboutRef)}>
+                Contact
+              </a>
             </li>
             <li>
-              <a href="javascript:void(0)" onClick={scrollToSection(albumRef)}>
+              <a href="#" onClick={scrollToSection(albumRef)}>
                 Album
               </a>
             </li>
@@ -95,15 +96,17 @@ function App() {
         </div>
         <ul className="menu-link">
           <li>
-            <a href="explore" onClick={scrollToSection(photogridRef)}>
+            <a href="#" onClick={scrollToSection(photogridRef)}>
               Explore
             </a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#" onClick={scrollToSection(aboutRef)}>
+              About
+            </a>
           </li>
           <li>
-            <a href="javascript:void(0)" onClick={scrollToSection(albumRef)}>
+            <a href="#" onClick={scrollToSection(albumRef)}>
               Album
             </a>
           </li>
@@ -138,7 +141,7 @@ function App() {
       </FadeInSection>
 
       <FadeInSection>
-        <section className="about content" id="about-section">
+        <section className="about content" id="about-section" ref={aboutRef}>
           <img src={profileImg} alt="Photographer" />
           <div>
             <div className="about-header bottommargin-lg">
